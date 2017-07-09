@@ -42,7 +42,7 @@ from yolomodel import yolo_model
 # create yolo instance 
 yolo=yolo_model.yolo()
 # preload weights
-yolo.load() 
+yolo.load(model='tiny-yolo',threshold=0.22)  ## now you can choose either load 'tiny-yolo' or 'yolo' model, and you can also pass in threshold 
 # run demo if you have a camera
 yolo.demo('camera')  # use key [ESC] to exit demo
 # predict a image
@@ -57,7 +57,7 @@ img_path = 'sample_img'
 imgs = os.listdir(img_path)
 cv_imgs = [cv2.imread(os.path.join(img_path,f),cv2.IMREAD_COLOR) for f in imgs] 
 yolo=yolo_model.yolo();
-yolo.load();
+yolo.load(model='tiny-yolo',threshold=0.22)  ## now you can choose either load 'tiny-yolo' or 'yolo' model, and you can also pass in threshold
 
 inputs = cv_imgs
 outputs = yolo.predict_imgcv_list(inputs,threshold=0.3)  ## now user can pass in threshold, if not, defaults to 0.35
