@@ -26,10 +26,11 @@ class yolo(object):
     def load(self,model='tiny-yolo',threshold=0.22):
         os.chdir(yolo_dir)
         
-        if model == 'tiny-yolo':
-            self.options = {"model": "cfg/tiny-yolo.cfg", "load": "bin/tiny-yolo.weights", "threshold": threshold,"gpu":0.9}
+        model_list =['tiny-yolo','tiny-yolo-voc','yolo']
+        if model in model_list: 
+            self.options = {"model": "cfg/"+model+".cfg", "load": "bin/"+model+".weights", "threshold": threshold,"gpu":0.9}
         else:
-            self.options = {"model": "cfg/yolo.cfg", "load": "bin/yolo.weights", "threshold": threshold,"gpu":0.9}
+            raise ValueError('model passed in is not in supported model list. Please pass in correct model.(tiny-yolo;tiny-yolo-voc,yolo)')
             
         self.tfnet = TFNet(self.options)
         os.chdir(self.parentdir)
