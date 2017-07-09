@@ -49,7 +49,7 @@ yolo.demo('camera')  # use key [ESC] to exit demo
 result = yolo.predict('dog.jpg')
 ```
 
-#### Batch process images return list of json
+#### process images in batch or single image in memory return list of json
 ```python
 import cv2
 
@@ -59,6 +59,10 @@ cv_imgs = [cv2.imread(os.path.join(img_path,f),cv2.IMREAD_COLOR) for f in imgs]
 yolo=yolo_model.yolo();
 yolo.load(model='tiny-yolo',threshold=0.22)  ## now you can choose either load 'tiny-yolo' or 'yolo' model, and you can also pass in threshold
 
+##### predict single memory image
+yolo.predict_imgcv(cv_imgs[0])
+
+##### predict images in batches
 inputs = cv_imgs
 outputs = yolo.predict_imgcv_list(inputs,threshold=0.3)  ## now user can pass in threshold, if not, defaults to 0.35
 print(outputs)
