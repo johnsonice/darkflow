@@ -42,7 +42,9 @@ from yolomodel import yolo_model
 # create yolo instance 
 yolo=yolo_model.yolo()
 # preload weights
-yolo.load(model='tiny-yolo',threshold=0.22)  ## now you can choose either load 'tiny-yolo' or 'yolo' model, and you can also pass in threshold 
+yolo.load(model='tiny-yolo',threshold=0.22)  
+## now you can choose either load 'tiny-yolo', 'tiny-yolo-voc' or 'yolo' model, and you can also pass in threshold 
+
 # run demo if you have a camera
 yolo.demo('camera')  # use key [ESC] to exit demo
 # predict a image
