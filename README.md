@@ -24,6 +24,7 @@ mkdir bin
 cd bin 
 wget https://www.dropbox.com/s/qhdbu7w3bi0tmyt/yolo.weights
 wget https://www.dropbox.com/s/5xmhad7j7tqnt1m/tiny-yolo.weights
+wget https://www.dropbox.com/s/1aug9zoiksc7x9i/tiny-yolo-voc.weights
 cd ..
 ```
 ### run demo 
