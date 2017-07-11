@@ -28,7 +28,7 @@ class yolo(object):
         
         model_list =['tiny-yolo','tiny-yolo-voc','yolo']
         if model in model_list: 
-            self.options = {"model": "cfg/"+model+".cfg", "load": "bin/"+model+".weights", "threshold": threshold,"gpu":0.1}
+            self.options = {"model": "cfg/"+model+".cfg", "load": "bin/"+model+".weights", "threshold": threshold,"gpu":0.05}
         else:
             raise ValueError('model passed in is not in supported model list. Please pass in correct model.(tiny-yolo;tiny-yolo-voc,yolo)')
             
