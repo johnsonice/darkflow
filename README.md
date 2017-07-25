@@ -26,6 +26,11 @@ wget https://www.dropbox.com/s/qhdbu7w3bi0tmyt/yolo.weights
 wget https://www.dropbox.com/s/5xmhad7j7tqnt1m/tiny-yolo.weights
 wget https://www.dropbox.com/s/1aug9zoiksc7x9i/tiny-yolo-voc.weights
 cd ..
+mkdir ckpt
+cd ckpt
+wget https://www.dropbox.com/s/cxjhxy7kais4vto/ckpt.tar.gz
+tar -xzf ckpt.tar.gz
+rm ckpt.tar.gz
 ```
 ### run demo 
 #### if you can access to a camera 
