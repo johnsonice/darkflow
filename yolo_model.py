@@ -23,12 +23,15 @@ class yolo(object):
     def __init__(self,):
         print("yolo model created")
         
-    def load(self,model='tiny-yolo',threshold=0.22):
+    def load(self,model='tiny-yolo',threshold=0.25,gpu=0):
         os.chdir(yolo_dir)
         
         model_list =['tiny-yolo','tiny-yolo-voc','yolo']
+        model_custom_list=['yolo-hand','yolo-tiny-hand']
         if model in model_list: 
-            self.options = {"model": "cfg/"+model+".cfg", "load": "bin/"+model+".weights", "threshold": threshold,"gpu":0.05}
+            self.options = {"model": "cfg/"+model+".cfg", "load": "bin/"+model+".weights", "threshold": threshold,'gpu':gpu}
+        elif model in model_custom_list:
+            self.options = {"model": "cfg/"+model+".cfg", "load": 100,"threshold": threshold,'gpu':gpu}
         else:
             raise ValueError('model passed in is not in supported model list. Please pass in correct model.(tiny-yolo;tiny-yolo-voc,yolo)')
             
