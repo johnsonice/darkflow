@@ -48,7 +48,7 @@ from yolomodel import yolo_model
 # create yolo instance 
 yolo=yolo_model.yolo()
 # preload weights
-yolo.load(model='tiny-yolo',threshold=0.22)  
+yolo.load(model='tiny-yolo',threshold=0.22,gpu=0.2)  
 ## now you can choose either load 'tiny-yolo', 'tiny-yolo-voc' or 'yolo' model, and you can also pass in threshold 
 
 # run demo if you have a camera
@@ -65,7 +65,7 @@ img_path = 'sample_img'
 imgs = os.listdir(img_path)
 cv_imgs = [cv2.imread(os.path.join(img_path,f),cv2.IMREAD_COLOR) for f in imgs] 
 yolo=yolo_model.yolo();
-yolo.load(model='tiny-yolo',threshold=0.22)  ## now you can choose either load 'tiny-yolo' or 'yolo' model, and you can also pass in threshold
+yolo.load(model='tiny-yolo',threshold=0.22,gpu=0.2)  ## now you can choose either load 'tiny-yolo' or 'yolo' model, and you can also pass in threshold
 
 ##### predict single memory image
 yolo.predict_imgcv(cv_imgs[0])
