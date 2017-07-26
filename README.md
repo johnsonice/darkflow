@@ -28,7 +28,7 @@ wget https://www.dropbox.com/s/1aug9zoiksc7x9i/tiny-yolo-voc.weights
 cd ..
 mkdir ckpt
 cd ckpt
-wget https://www.dropbox.com/s/cxjhxy7kais4vto/ckpt.tar.gz
+wget https://www.dropbox.com/s/pct28zznt6gtih1/ckpt.tar.gz
 tar -xzf ckpt.tar.gz
 rm ckpt.tar.gz
 ```
