@@ -27,7 +27,7 @@ class yolo(object):
         os.chdir(yolo_dir)
         
         model_list =['tiny-yolo','tiny-yolo-voc','yolo']
-        model_custom_list=['yolo-hand','yolo-tiny-hand']
+        model_custom_list=['yolo-hand','tiny-yolo-hand']
         if model in model_list: 
             self.options = {"model": "cfg/"+model+".cfg", "load": "bin/"+model+".weights", "threshold": threshold,'gpu':gpu}
         elif model in model_custom_list:
